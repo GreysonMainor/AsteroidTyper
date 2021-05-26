@@ -1,6 +1,5 @@
 {
   "homepage": "https://GreysonMainor.github.io/Asteroid-Typer",
-
   "name": "Asteroid-Typer",
   "version": "1.0.0",
   "description": "",
@@ -12,5 +11,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^3.2.0"
+  }
 }
