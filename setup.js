@@ -8,6 +8,10 @@ var score = 0;
 var planetCrust;
 var planetMantle;
 var ship;
+var button;
+var drawing = false;
+
+
 
 
 function setup() {
@@ -17,17 +21,39 @@ function setup() {
     planetCrust = randomColor();
     planetMantle = randomColor();
     ship = randomColor();
-    field.push(new Asteroid(random(width - 150) + 75, 0, random(WORDS), randomColor()));
-    focus = null;
+    focus=null;
+    var drawButton = createButton("Start Game")
+    drawButton.mousePressed(startGame)
+    var resetButton = createButton("Reset")
+    resetButton.mousePressed(reset)
 }
 
+
 function draw() {
+    if (drawing) {
     background(51);
     drawBase();
     drawLazer();
     drawScore();
     handleField();
+    }
 }
+
+
+function startGame() {
+    drawing = true
+    field.push(new Asteroid(random(width - 150) + 75, 0, random(WORDS), randomColor()));
+}
+
+function reset() {
+    planetCrust = randomColor();
+    planetMantle = randomColor();
+    ship = randomColor();
+    focus=null;
+    location.reload();
+}
+
+
 
 function handleField() {
 
@@ -76,7 +102,6 @@ function drawBase() {
 }
 
 function drawLazer() {
-
     if (!focus)
         return;
     stroke(randomColor());
@@ -91,7 +116,6 @@ function drawLazer() {
 
 
 function drawScore() {
-
     textAlign(RIGHT);
     noStroke();
     textSize(30);
@@ -104,13 +128,10 @@ function randomColor() {
 }
 
 function endGame() {
-
     noLoop();
-
     fill(255);
     noStroke();
     textAlign(CENTER);
     textSize(80);
     text("Game Over!", width / 2, height / 2);
 }
-

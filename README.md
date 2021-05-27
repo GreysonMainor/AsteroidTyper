@@ -1,9 +1,8 @@
 # AsteroidTyper
-# PWA-Budget-Tracker
 
 
 ## Description
-This application is a simple front end application that allows yout to play a typing game masqueraded as a earth survival game.
+This application is a simple front end application that allows you to play a typing game masqueraded as a earth survival game.
 
 -[Installation](#installation)
 
