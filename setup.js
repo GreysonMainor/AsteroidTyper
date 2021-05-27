@@ -22,10 +22,12 @@ function setup() {
     planetMantle = randomColor();
     ship = randomColor();
     focus=null;
-    var drawButton = createButton("Start Game")
-    drawButton.mousePressed(startGame)
+    var startButton = createButton("Start Game")
+    startButton.mousePressed(startGame)
     var resetButton = createButton("Reset")
     resetButton.mousePressed(reset)
+    startButton.position(365,510)
+    resetButton.position(380,530)
 }
 
 
@@ -41,7 +43,8 @@ function draw() {
 
 
 function startGame() {
-    drawing = true
+    drawing = true;
+   drawButton.remove();
     field.push(new Asteroid(random(width - 150) + 75, 0, random(WORDS), randomColor()));
 }
 
